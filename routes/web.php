@@ -19,6 +19,23 @@ route::get('/analisa','PagesController@analisa');
 route::get('/tutor','PagesController@tutor');
 route::get('/legalitas','PagesController@legalitas');
 route::get('/partner','PagesController@partner');
+route::get('/login','AuthController@index');
+route::get('/register','AuthController@register');
+route::post('/postlogin','AuthController@login');
+route::post('/postuser','AuthController@store');
+
+route::get('/index','HomeController@index');
+
+route::get('/user','UsersController@index');
+route::get('/webinar','BinarsController@index');
+route::get('/partner','PartnersController@index');
+route::get('/news','NewsController@index');
+route::get('/analyst','AnalysisController@index');
+route::get('/logout','AuthController@logout');
+
+
+
+
 
 
 

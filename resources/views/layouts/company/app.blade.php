@@ -52,7 +52,7 @@ z-index: 999999">
       <nav class="navbar navbar-expand-lg sticky-top" style="background-color: black;">
       <div class="container">
       <a class="navbar-brand" href="/">
-                    <img src="{{asset('assets/img/vif_logo.png')}}" width="250" height="40" alt="logo">
+                    <img src="{{asset('assets/img/logoo.png')}}" width="250" height="40" alt="logo">
                 </a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,11 +74,11 @@ z-index: 999999">
           <a class="nav-link text-white {{ Request::is('analisa') ? "active" : '' }}" href="/analisa">Analisa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ Request::is('partner') ? "active" : '' }}" href="/partner">Partner Trainer</a>
+          <a class="nav-link text-white {{ Request::is('partner') ? "active" : '' }}" href="/partner">Partner Traider</a>
         </li>
 
         <li class="nav-pills">
-          <a  href="" style="width:100px" class="btn btn-success">LOGIN</a>
+          <a  href="/login" style="width:100px" class="btn btn-success">LOGIN</a>
         </li>
       </ul>
       </b>
@@ -170,13 +170,13 @@ z-index: 999999">
           <li>
             <br>
             <center>
-            <a href="#!" class="text-white"><img src="/assets/img/fb.png" width="50" height="35"></a>
+            <a href="https://www.facebook.com/vif.bdgbranch" target="_blank" class="text-white"><img src="/assets/img/fb.png" width="50" height="35"></a>
             </center>
           </li>
           <li>
             <br>
             <center>
-            <a href="#!" class="text-white"><img src="/assets/img/ig.png" width="35" height="35"></a>
+            <a href="https://www.instagram.com/vifbandung/" target="_blank" class="text-white"><img src="/assets/img/ig.png" width="35" height="35"></a>
             </center>
           </li>
           <li>

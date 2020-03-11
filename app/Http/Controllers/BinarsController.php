@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
+use App\Binars;
 use Illuminate\Http\Request;
 
-class NewsController extends Controller
+class BinarsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-          return view('company.admin.news.index');
+          return view('company.admin.webinar.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\News  $news
+     * @param  \App\Binars  $binars
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(Binars $binars)
     {
         //
     }
@@ -52,10 +52,10 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\News  $news
+     * @param  \App\Binars  $binars
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(Binars $binars)
     {
         //
     }
@@ -64,10 +64,10 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\News  $news
+     * @param  \App\Binars  $binars
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, Binars $binars)
     {
         //
     }
@@ -75,10 +75,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\News  $news
+     * @param  \App\Binars  $binars
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(Binars $binars)
     {
         //
     }
