@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Binars;
+use App\Binar;
 use Illuminate\Http\Request;
 
 class BinarsController extends Controller
@@ -14,7 +14,8 @@ class BinarsController extends Controller
      */
     public function index()
     {
-          return view('company.admin.webinar.index');
+        $binar = Binar::all();
+          return view('company.admin.webinar.index',compact('binar'));
     }
 
     /**
@@ -24,7 +25,7 @@ class BinarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.admin.webinar.add');
     }
 
     /**
@@ -35,7 +36,27 @@ class BinarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'file' => 'required',
+             'description' => 'required',
+        ]);
+ 
+        $image = $request->file('file');
+        $nama_file = $image->getClientOriginalName();
+        
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'assets/uploads/webinar';
+        
+        $image->move($tujuan_upload,$nama_file);
+
+        Binar::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'post_by' => $request->postby,
+            'image' => $nama_file,
+        ]);
+
+        return redirect('/webinar');
     }
 
     /**

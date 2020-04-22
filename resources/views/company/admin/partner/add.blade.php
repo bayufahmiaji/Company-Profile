@@ -1,7 +1,7 @@
 @extends('layouts.company.admin')
 
 @section('title')
-Add Berita Victory
+Add Partner Victory
 @stop
 {{-- page level styles --}}
 @section('header_styles')
@@ -40,33 +40,39 @@ Add Berita Victory
                     @endforeach
                 </div>
                 @endif
-              <form method="POST" action="/new/add" enctype="multipart/form-data">
+              <form method="POST" action="/partners/add" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     <div class="form-group">
-                        <label for="email" class="col-form-label"> Judul Berita</label>
+                        <label for="email" class="col-form-label"> Nama Partner</label>
                         <div class="input-group input-group-prepend">
                             <input type="text" class="form-control  form-control-md" required name="title" placeholder="Title" >
                         </div>
                     </div>
                    
                     <div class="form-group">
-                        <label for="email" class="col-form-label"> Upload By</label>
+                        <label for="email" class="col-form-label"> Manager</label>
                         <div class="input-group input-group-prepend">
-                            <input type="text" class="form-control  form-control-md" required name="postby" placeholder="Post By" value="{{auth()->user()->name}}" >
+                            <input type="text" class="form-control  form-control-md" required name="manager" placeholder="Manager"  >
                         </div>
                     </div>
                      <div class="form-group">
                         <label for="email" class="col-form-label"> Deskripsi</label>
                         <div class="input-group input-group-prepend">
-                            <textarea class="form-control" style="height: 100pc" name="description"></textarea>
+                            <textarea class="form-control" style="height: 100px" name="description"></textarea>
                            
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label"> link</label>
+                        <div class="input-group input-group-prepend">
+                            <input type="text" class="form-control  form-control-md" required name="link" placeholder="link"  >
+                        </div>
+                    </div>
                          <div class="form-group">
-                            <label for="email" class="col-form-label"> Upload Image</label>
+                            <label for="email" class="col-form-label"> Logo Partner</label>
                             <div class="input-group input-group-prepend">
-                                <input id="input-21" name="image" type="file" accept="image/*" class="file-loading form-control">
+                                <input id="input-21" name="file" type="file" accept="image/*" class="file-loading form-control">
                             </div>
                         </div>
 

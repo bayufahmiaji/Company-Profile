@@ -69,6 +69,11 @@ z-index: 999999">
                                 <div class="col-6 m-t-10">
                                     <a href="/register" class="forgottxt_clr text-black"><i class="fa fa-external-link"></i> Register Now</a>
                                 </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-6 m-t-10">
+                                    <a href="/" class="forgottxt_clr text-black"><i class="fa fa-external-link"></i> Home</a>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">

@@ -14,7 +14,8 @@ class AnalysisController extends Controller
      */
     public function index()
     {
-         return view('company.admin.analyst.index');
+        $analyst = Analysis::all();
+         return view('company.admin.analyst.index',compact('analyst'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AnalysisController extends Controller
      */
     public function create()
     {
-        //
+         return view('company.admin.analyst.add');
     }
 
     /**
@@ -35,7 +36,27 @@ class AnalysisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'description' => 'required',
+        ]);
+ 
+        $image = $request->file('image');
+        $nama_file = $image->getClientOriginalName();
+        
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'assets/uploads/analyst';
+        
+        $image->move($tujuan_upload,$nama_file);
+
+        Analysis::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'post_by' => $request->postby,
+            'image' => $nama_file,
+        ]);
+
+        return redirect('/analyst');
     }
 
     /**
@@ -46,7 +67,7 @@ class AnalysisController extends Controller
      */
     public function show(Analysis $analysis)
     {
-        //
+       return view('company.admin.analyst.detail',compact('analysis')); 
     }
 
     /**

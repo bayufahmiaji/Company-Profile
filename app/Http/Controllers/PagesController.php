@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Partner;
+use App\Binar;
+use App\News;
+use App\Analysis;
+
 
 class PagesController extends Controller
 {
@@ -21,11 +26,16 @@ class PagesController extends Controller
     }
 
     public function berita(){
-        return view('company.costumer.berita');
+        $news = News::all();
+        return view('company.costumer.berita',compact('news'));
+    }
+     public function berita2(News $news){
+        return view('company.costumer.detail-berita',compact('news'));
     }
 
     public function tutor(){
-        return view('company.costumer.tutor');
+        $binar = Binar::all();
+        return view('company.costumer.tutor',compact('binar'));
     }
 
     public function legalitas(){
@@ -33,11 +43,17 @@ class PagesController extends Controller
     }
 
     public function analisa(){
-        return view('company.costumer.analisa');
+        $analyst = Analysis::all();
+        return view('company.costumer.analisa',compact('analyst'));
+    }
+    public function analisa2(Analysis $analysis){
+      
+        return view('company.costumer.detail-analyst',compact('analysis'));
     }
  
     public function partner(){
-        return view('company.costumer.partner');
+        $partner = Partner::all();
+        return view('company.costumer.partner',compact('partner'));
     }
  
 }

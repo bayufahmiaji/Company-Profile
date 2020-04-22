@@ -68,9 +68,9 @@
                         <div class="front">
                             <div class="bg-primary p-d-15 b_r_5">
                                 <div class="float-right m-t-5">
-                                    <i class="fa fa-car"></i>
+                                    <i class="fa fa-book"></i>
                                 </div>
-                                <div class="user_font">Cars</div>
+                                <div class="user_font">News</div>
                                 <div id="widget_countup12">{{0}}</div>
                                 
                             </div>
@@ -79,10 +79,10 @@
                             <div class="bg-white b_r_5 section_border">
                                 <div class="p-t-l-r-15">
                                     <div class="float-right m-t-5">
-                                        <i class="fa fa-car text-primary"></i>
+                                        <i class="fa fa-book text-primary"></i>
                                     </div>
                                     <div id="widget_countup12">{{0}}</div>
-                                    <div>Cars</div>
+                                    <div>News</div>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                 <div class="float-right m-t-5">
                                     <i class="fa fa-book"></i>
                                 </div>
-                                <div class="user_font">Rented</div>
+                                <div class="user_font">Analisa</div>
                                 <div id="widget_countup12">{{0}}</div>
                                 
                             </div>
@@ -110,7 +110,7 @@
                                         <i class="fa fa-book"></i>
                                     </div>
                                     <div id="widget_countup22">{{0}}</div>
-                                    <div>Rented</div>
+                                    <div>Analisa</div>
                                 </div>
                             </div>
                         </div>  
@@ -124,7 +124,7 @@
                                 <div class="float-right m-t-5">
                                     <i class="fa fa-money"></i>
                                 </div>
-                                <div class="user_font">Balance</div>
+                                <div class="user_font">Partner</div>
                                 <div class="user_font">0</div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                         <i class="fa fa-money"></i>
                                     </div>
                                     <div id="widget_countup22"><h4>0</h4></div>
-                                    <div>Rented</div>
+                                    <div>Partner</div>
                                 </div>
                             </div>
                         </div>  

@@ -14,7 +14,8 @@ class PartnersController extends Controller
      */
     public function index()
     {
-          return view('company.admin.partner.index');
+        $partner = Partner::all();
+          return view('company.admin.partner.index',compact('partner'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PartnersController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.admin.partner.add');
     }
 
     /**
@@ -35,7 +36,30 @@ class PartnersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'file' => 'required',
+             'description' => 'required',
+             'manager' => 'required',
+             'link' => 'required',
+        ]);
+ 
+        $image = $request->file('file');
+        $nama_file = $image->getClientOriginalName();
+        
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'assets/uploads/partner';
+        
+        $image->move($tujuan_upload,$nama_file);
+
+        Partner::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'manager' => $request->manager,
+            'link' => $request->link,
+            'image' => $nama_file,
+        ]);
+
+        return redirect('/partner');
     }
 
     /**

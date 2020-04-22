@@ -19,20 +19,20 @@ Berita Victory
         </div>
     </header>
     <div class="container">
-    	<a class="btn btn-success" href=""><i class="fa fa-plus"></i> Add News</a>
+    	<a class="btn btn-success" href="/news/add"><i class="fa fa-plus"></i> Add News</a>
     </div>
+    @foreach($news as $news)
     <br>
-
 	<div class="media list-group-item list-group-item-action container">
 	  <table >
 	  	<tbody>
 	  	  <tr>
 	  	  	<td>
-	  	  		<h3 style="text-align: left;"><span style="color: #ff6600;">VIFX Pro™ Bandung</span></h3>
+	  	  		<h3 style="text-align: left;"><span style="color: #ff6600;">{{$news->title}}</span></h3>
 	  	  	</td>
 	  	  </tr>
 	  	  <tr>
-	  	  	<td><span> ini hari sama yang upload</span>
+	  	  	<td><span> {{$news->post_by}}</span>
 	  	  	</td>
 	  	  </tr>
 	  	  <tr>
@@ -42,17 +42,20 @@ Berita Victory
 	  	  </tr>
 	      <tr>
 	        <td>
-	        	<img width="400px" height="300px" src="{{asset('assets/img/moto.png')}}"></td>
+	        	<img width="400px" height="300px" src="{{asset('assets/uploads/news/'.$news->image)}}"></td>
 	        <td  class="align-top" colspan="3">
 	        	<div class="container ">
-	        		
-	           Jakarta, 11 Maret 2020 – 17:03 WIB – Victory International Futures – vifxpro.com Pada pasar perdagangan hari Rabu (11/3), saham Eropa menguat pertama kalinya dalam lima sesi, karena Inggris menjadi negara terbaru untuk memotong suku bunga dalam upaya untuk menahan kerusakan ekonomi dari epidemi virus corona. Pada pukul 16:44 WIB Saham Pan-Eropa STOXX 600 menguat
+	        		<p>
+	        		<?=substr($news->description,0,500);?>
+	        		</p>
 	        	</div>
 	    	</td>
 	      </tr>
 	    </tbody>
 	  </table>  
 		<div style="text-align: right;">
-			<a href="" class="btn btn-danger" ><strong>Read More</strong> </a>
+			<a href="/news/{{$news->id}}/detail" class="btn btn-danger" ><strong>Read More</strong> </a>
 		</div>
+	</div>
+		@endforeach
 @stop

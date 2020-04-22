@@ -16,21 +16,21 @@
       <img src="{{asset('assets/img/logo.jpg')}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
-        <p style="color:black;">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+       <!--  <p style="color:black;">Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
       </div>
     </div>
     <div class="carousel-item">
       <img src="{{asset('assets/img/logo.jpg')}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+       <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
       </div>
     </div>
     <div class="carousel-item">
       <img src="{{asset('assets/img/logo.jpg')}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
     <div class="card-body">
       <br>
       <br>
-      <img src="{{asset('assets/img/moto.png')}}">
+      <img width="1450px" src="{{asset('assets/img/moto.png')}}">
       <br>
       <br>
     </div>

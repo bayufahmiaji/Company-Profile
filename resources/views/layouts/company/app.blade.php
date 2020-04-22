@@ -23,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{asset('assets/img/logo1.ico')}}"/>
+    <link rel="shortcut icon" href="{{asset('assets/img/logot.jpg')}}"/>
     <!-- Global styles -->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}" />
@@ -74,7 +74,7 @@ z-index: 999999">
           <a class="nav-link text-white {{ Request::is('analisa') ? "active" : '' }}" href="/analisa">Analisa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white {{ Request::is('partner') ? "active" : '' }}" href="/partner">Partner Traider</a>
+          <a class="nav-link text-white {{ Request::is('partner') ? "active" : '' }}" href="/partners">Partner Traider</a>
         </li>
 
         <li class="nav-pills">
@@ -211,7 +211,7 @@ z-index: 999999">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">2020 Copyright:
-    <a href="https://github.com/bayufahmiaji" class="text-white">Bayu Fahmiaji Fadillah</a>
+    <a href="https://github.com/bayufahmiaji" target="_blank" class="text-white">Bayu Fahmiaji Fadillah</a>
   </div>
 </div>
   <!-- Copyright -->

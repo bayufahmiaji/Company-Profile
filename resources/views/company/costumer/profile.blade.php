@@ -1,21 +1,17 @@
 @extends('layouts.company.app')
-<head>
-	
-	   <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/index.css')}}">
-</head>
 @section('title')
     Profile
 @stop
 
 @section('content')
-	
+	<div class="card">
 	<div class="card-body">      
              
                 <center><img src="{{asset('assets/img/logo.jpg')}}" class="img-center " style="align:center; height:120px; width:500px;" alt="Photo of sunset"></center>
             </div>
 
-     <div class=" card bg-dark">
-	    <div class="card-body">
+     
+	    <div class="card-body bg-dark">
 	  	<center>
 	    <h1 style="color:white"><br>Sejarah</h1>
 		    <h4><p  style="color:white">
@@ -35,8 +31,8 @@
 			</h4>
 		</center>
 	  </div>
-	</div>
-	    <div class="card-body">
+	
+    <div class="card-body">
 	  	<center>
 	    <h1 class="text-warning"><br>VISI</h1>
 		    <h4><p>
@@ -45,7 +41,6 @@
 			</h4>
 		</center>
 	  </div>
-	</div>
 	
 
 	 	
@@ -54,14 +49,14 @@
 	    <h1 style="color:white"><br>MISI</h1>
 		    <h4><p style="color:white">
 		    	Kami berkomitmen untuk meletakkan dasar yang tepat untuk para investor mencapai tujuan trading dan menghasilkan sebanyak mungkin dari pasar global
+		    </p>
 			</h4>
 		</center>
 
 	 </div>
+	</div>
 	
 
 	
       
 @stop
-
-   <script type="text/javascript" src="{{asset('assets/js/pages/index.js')}}"></script>

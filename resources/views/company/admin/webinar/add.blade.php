@@ -1,7 +1,7 @@
 @extends('layouts.company.admin')
 
 @section('title')
-Add Berita Victory
+Add Webinar Victory
 @stop
 {{-- page level styles --}}
 @section('header_styles')
@@ -24,14 +24,14 @@ Add Berita Victory
                 <div class="col-sm-6">
                     <h4 class="nav_top_align">
                         <i class="fa fa-book"></i>
-                       Tambah Berita
+                       Tambah Analisis
                     </h4>
                 </div>
                 
             </div>
         </div>
     </header>
-	    <div class="outer">
+        <div class="outer">
         <div class="inner bg-container">
             @if(count($errors) > 0)
                 <div class="alert alert-danger">
@@ -40,7 +40,7 @@ Add Berita Victory
                     @endforeach
                 </div>
                 @endif
-              <form method="POST" action="/new/add" enctype="multipart/form-data">
+              <form method="POST" action="/webinar/adds" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     <div class="form-group">
@@ -63,12 +63,12 @@ Add Berita Victory
                            
                         </div>
                     </div>
-                         <div class="form-group">
-                            <label for="email" class="col-form-label"> Upload Image</label>
-                            <div class="input-group input-group-prepend">
-                                <input id="input-21" name="image" type="file" accept="image/*" class="file-loading form-control">
-                            </div>
+                    <div class="form-group">
+                        <h5>File Upload</h5>
+                        <div class="col m-t-35">
+                            <input id="input-fa" name="file" type="file" multiple class="file-loading">
                         </div>
+                    </div>
 
                     
                      <div class="form-group">
@@ -77,9 +77,9 @@ Add Berita Victory
                     </div>
 
               </form>
-	    </div>       
-	</div>
-	 
+        </div>       
+    </div>
+     
 
 @stop
 {{-- page level scripts --}}

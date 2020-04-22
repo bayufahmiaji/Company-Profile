@@ -14,7 +14,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-          return view('company.admin.news.index');
+        $news = News::all();
+          return view('company.admin.news.index',compact('news'));
     }
 
     /**
@@ -24,7 +25,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+         return view('company.admin.news.add');
     }
 
     /**
@@ -35,7 +36,27 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'image' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+             'description' => 'required',
+        ]);
+ 
+        $image = $request->file('image');
+        $nama_file = $image->getClientOriginalName();
+        
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'assets/uploads/news';
+        
+        $image->move($tujuan_upload,$nama_file);
+
+        News::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'post_by' => $request->postby,
+            'image' => $nama_file,
+        ]);
+
+        return redirect('/news');
     }
 
     /**
@@ -46,7 +67,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        return view('company.admin.news.detail',compact('news'));
     }
 
     /**
