@@ -1,7 +1,7 @@
 @extends('layouts.company.admin')
 
 @section('title')
-Add Analysis Victory
+Edit Analysis Victory
 @stop
 {{-- page level styles --}}
 @section('header_styles')
@@ -45,20 +45,20 @@ Add Analysis Victory
                     @endforeach
                 </div>
                 @endif
-              <form method="POST" action="/analyst/adds" enctype="multipart/form-data">
+              <form method="POST" action="/analyst/{{$analysis->id}}/update" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     <div class="form-group">
                         <label for="email" class="col-form-label"> Judul Berita</label>
                         <div class="input-group input-group-prepend">
-                            <input type="text" class="form-control  form-control-md" required name="title" placeholder="Title" >
+                            <input type="text" class="form-control  form-control-md" required name="title" placeholder="Title" value="{{$analysis->title}}">
                         </div>
                     </div>
                    
                     <div class="form-group">
                         <label for="email" class="col-form-label"> Upload By</label>
                         <div class="input-group input-group-prepend">
-                            <input type="text" class="form-control  form-control-md" required name="postby" placeholder="Post By" value="{{auth()->user()->name}}" >
+                            <input type="text" class="form-control  form-control-md" required name="post_by" placeholder="Post By" value="{{$analysis->post_by}}" >
                         </div>
                     </div>
                     <div class="row summer_note_display summer_note_btn">
@@ -71,18 +71,15 @@ Add Analysis Victory
                                 </div>
                                 <div class='card-body pad m-t-25'>
                                     <textarea class="textarea form_editors_textarea_wysihtml"
-                                              placeholder="Place some text here" name="description"></textarea>
+                                              placeholder="Place some text here" name="description">
+                                                  <?=substr($analysis->description,0);?>
+                                              </textarea>
                             
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email" class="col-form-label"> Upload Image</label>
-                        <div class="input-group input-group-prepend">
-                            <input id="input-21" name="image" type="file" accept="image/*" class="file-loading form-control">
-                        </div>
-                    </div>
+                  
 
                     
                      <div class="form-group">

@@ -14,6 +14,11 @@ Add Berita Victory
 <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/dropify/css/dropify.css')}}">
 <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/dropzone/css/dropzone.min.css')}}">
 <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/file_upload.css')}}">
+<!-- global styles-->
+    <link type="text/css" rel="stylesheet" media="screen" href="{{asset('assets/vendors/bootstrap3-wysihtml5-bower/css/bootstrap3-wysihtml5.min.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/vendors/summernote/css/summernote.css')}}"/>
+    <!-- end of global styles-->
+    <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/form_elements.css')}}"/>
 <!--End of page level styles-->
 @stop
 
@@ -24,14 +29,14 @@ Add Berita Victory
                 <div class="col-sm-6">
                     <h4 class="nav_top_align">
                         <i class="fa fa-book"></i>
-                       Tambah Berita
+                       Tambah Analisis
                     </h4>
                 </div>
                 
             </div>
         </div>
     </header>
-	    <div class="outer">
+        <div class="outer">
         <div class="inner bg-container">
             @if(count($errors) > 0)
                 <div class="alert alert-danger">
@@ -53,22 +58,31 @@ Add Berita Victory
                     <div class="form-group">
                         <label for="email" class="col-form-label"> Upload By</label>
                         <div class="input-group input-group-prepend">
-                            <input type="text" class="form-control  form-control-md" required name="postby" placeholder="Post By" value="{{auth()->user()->name}}" >
+                            <input type="text" class="form-control  form-control-md" required name="post_by" placeholder="Post By" value="{{auth()->user()->name}}" >
                         </div>
                     </div>
-                     <div class="form-group">
-                        <label for="email" class="col-form-label"> Deskripsi</label>
-                        <div class="input-group input-group-prepend">
-                            <textarea class="form-control" style="height: 100pc" name="description"></textarea>
-                           
-                        </div>
-                    </div>
-                         <div class="form-group">
-                            <label for="email" class="col-form-label"> Upload Image</label>
-                            <div class="input-group input-group-prepend">
-                                <input id="input-21" name="image" type="file" accept="image/*" class="file-loading form-control">
+                    <div class="row summer_note_display summer_note_btn">
+                        <div class="col">
+                            <div class='card m-t-35'>
+                                <div class='card-header bg-white '>
+                                    Deskripsi Analisis
+                                    <!-- tools box -->
+                                    <div class="float-right box-tools"></div>
+                                </div>
+                                <div class='card-body pad m-t-25'>
+                                    <textarea class="textarea form_editors_textarea_wysihtml"
+                                              placeholder="Place some text here" name="description"></textarea>
+                            
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label"> Upload Image</label>
+                        <div class="input-group input-group-prepend">
+                            <input id="input-21" name="image" type="file" accept="image/*" class="file-loading form-control">
+                        </div>
+                    </div>
 
                     
                      <div class="form-group">
@@ -77,9 +91,9 @@ Add Berita Victory
                     </div>
 
               </form>
-	    </div>       
-	</div>
-	 
+        </div>       
+    </div>
+     
 
 @stop
 {{-- page level scripts --}}
@@ -103,6 +117,15 @@ Add Berita Victory
 <script type="text/javascript" src="{{asset('assets/vendors/dropify/js/dropify.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/vendors/dropzone/js/dropzone.js')}}"></script>
 <!-- end of global scripts-->
+ <!--Plugin scripts-->
+    <script type="text/javascript" src="{{asset('assets/vendors/tinymce/js/tinymce.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/vendors/bootstrap3-wysihtml5-bower/js/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/pluginjs/bootstrap3_wysihtml5.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/vendors/summernote/js/summernote.js')}}"></script>
+    <!--End of plugin scripts-->
+    <!--Page level scripts-->
+    <script type="text/javascript" src="{{asset('assets/js/pages/form_editors.js')}}"></script>
+    <!-- end page level scripts -->
 <script type="text/javascript" src="{{asset('assets/js/pages/file_upload.js')}}"></script>
 <script id="template-upload" type="text/x-tmpl">
         {% for (var i=0, file; file=o.files[i]; i++) { %}

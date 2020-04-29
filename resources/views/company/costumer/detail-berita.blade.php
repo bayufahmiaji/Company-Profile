@@ -20,9 +20,9 @@ Berita
 			<br>  
 			<p><a href="#" class="btn btn-dark">Diposkan pada {{$news->created_at}}</a> </p>  
 		</div>  
-		<p style="text-align:justify;">{{$news->description}}</p>  
 		<div style="clear:both;"></div>  
 		</div>  
+		<p style="text-align:justify;"><?=substr($news->description,0);?></p>  
 
 	</div>
 		</div>    	

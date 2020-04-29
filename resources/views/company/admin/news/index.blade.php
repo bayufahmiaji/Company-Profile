@@ -55,6 +55,8 @@ Berita Victory
 	  </table>  
 		<div style="text-align: right;">
 			<a href="/news/{{$news->id}}/detail" class="btn btn-danger" ><strong>Read More</strong> </a>
+			<a href="/news/{{$news->id}}/edit" class="btn btn-danger" ><strong>Edit</strong> </a>
+			<a href="/news/{{$news->id}}/delete" class="btn btn-danger" ><strong>Delete</strong> </a>
 		</div>
 	</div>
 		@endforeach

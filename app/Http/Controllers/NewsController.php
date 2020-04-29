@@ -14,7 +14,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::all();
+        $news = News::orderBy('id','desc')->get();
           return view('company.admin.news.index',compact('news'));
     }
 
@@ -52,7 +52,7 @@ class NewsController extends Controller
         News::create([
             'title' => $request->title,
             'description' => $request->description,
-            'post_by' => $request->postby,
+            'post_by' => $request->post_by,
             'image' => $nama_file,
         ]);
 
@@ -78,7 +78,7 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return view('company.admin.news.edit',compact('news'));
     }
 
     /**
@@ -88,9 +88,15 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, $id)
     {
-        //
+        $news = News::find($id);
+        $news->title = $request->title;
+        $news->post_by = $request->post_by;
+        $news->description = $request->description;
+        $news->update();
+
+        return redirect('/news');
     }
 
     /**
@@ -101,6 +107,7 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        $news->delete($news);
+        return back();
     }
 }

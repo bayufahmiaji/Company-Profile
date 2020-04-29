@@ -27,7 +27,7 @@
     <!-- Global styles -->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/components.css')}}" />
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/custom.css')}}" />
-    
+    @yield('header_styles')
     <!-- End of Global styles -->
 </head>
 <body>
@@ -164,7 +164,7 @@ z-index: 999999">
         <ul class="list-unstyled ">
           <li>
             <center>
-            <a href="#!" class="text-white">  <img src="/assets/img/wa.png" width="35" height="35"></a>
+            <a href="https://wa.me/6281211439203?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0AJumlah%3A" class="text-white" target="_blank">  <img src="/assets/img/wa.png" width="35" height="35"></a>
             </center>
           </li>
           <li>
@@ -182,7 +182,7 @@ z-index: 999999">
           <li>
             <br>
             <center>
-            <a href="#!" class="text-white"><img src="/assets/img/email.png" width="35" height="35"></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=novalsofian8@gmail.com&su=SUBJECT&body=BODY" class="text-white" target="_blank"><img src="/assets/img/email.png" width="35" height="35"></a>
             </center>
           </li>
         </ul>
@@ -211,11 +211,11 @@ z-index: 999999">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">2020 Copyright:
-    <a href="https://github.com/bayufahmiaji" target="_blank" class="text-white">Bayu Fahmiaji Fadillah</a>
+    <a href="https://github.com/bayufahmiaji" target="_blank" class="text-white">Victory</a>
   </div>
 </div>
   <!-- Copyright -->
-
+@yield('footer_scripts')
 </footer>
 <!-- Footer -->
 </html>

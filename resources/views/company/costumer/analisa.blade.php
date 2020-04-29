@@ -1,7 +1,7 @@
 @extends('layouts.company.app')
 
 @section('title')
-    Analisa
+    Berita
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
 	  	  	</td>
 	  	  </tr>
 	  	  <tr>
-	  	  	<td><span class="btn btn-dark">Diposkan pada : {{$analyst->created_at}}</span>
+	  	  	<td><span> {{$analyst->post_by}}</span>
 	  	  	</td>
 	  	  </tr>
 	  	  <tr>
@@ -38,8 +38,8 @@
 	    </tbody>
 	  </table>  
 		<div style="text-align: right;">
-			<a href="/analisa/{{$analyst->id}}/detail" class="btn btn-danger" ><strong>Read More</strong> </a>
+			<a href="/berita/{{$analyst->id}}/detail" class="btn btn-danger" ><strong>Read More</strong> </a>
 		</div>
 	</div>
-		@endforeach	
+		@endforeach
 @endsection

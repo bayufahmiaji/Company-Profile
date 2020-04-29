@@ -14,7 +14,7 @@ class AnalysisController extends Controller
      */
     public function index()
     {
-        $analyst = Analysis::all();
+        $analyst = Analysis::orderBy('id','desc')->get();
          return view('company.admin.analyst.index',compact('analyst'));
     }
 
@@ -78,7 +78,7 @@ class AnalysisController extends Controller
      */
     public function edit(Analysis $analysis)
     {
-        //
+       return view('company.admin.analyst.edit',compact('analysis')); 
     }
 
     /**
@@ -88,9 +88,16 @@ class AnalysisController extends Controller
      * @param  \App\Analysis  $analysis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Analysis $analysis)
+    public function update(Request $request, $id)
     {
-        //
+        $analyst = Analysis::find($id);
+        $analyst->title = $request->title;
+        $analyst->post_by = $request->post_by;
+        $analyst->description = $request->description;
+        $analyst->update();
+
+        return redirect('/analyst');
+
     }
 
     /**
@@ -101,6 +108,7 @@ class AnalysisController extends Controller
      */
     public function destroy(Analysis $analysis)
     {
-        //
+        $analysis->delete($analysis);
+        return back();
     }
 }

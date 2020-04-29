@@ -56,6 +56,8 @@ Analisis Victory
 	  </table>  
 		<div style="text-align: right;">
 			<a href="/analyst/{{$analyst->id}}/detail" class="btn btn-danger" ><strong>Read More</strong> </a>
+			<a href="/analyst/{{$analyst->id}}/edit" class="btn btn-danger" ><strong>Edit</strong> </a>
+			<a href="/analyst/{{$analyst->id}}/delete" class="btn btn-danger" ><strong>Delete</strong> </a>
 		</div>
 	</div>
 		@endforeach	

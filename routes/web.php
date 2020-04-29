@@ -30,29 +30,38 @@ route::get('/register','AuthController@register');
 route::post('/postlogin','AuthController@login');
 route::post('/postuser','AuthController@store');
 
-route::get('/index','HomeController@index');
 
-route::get('/user','UsersController@index');
+Route::group(['middleware' => 'auth'],function(){
+	route::get('/index','HomeController@index');
 
-route::get('/webinar','BinarsController@index');
-route::get('/webinar/add','BinarsController@create');
-route::post('/webinar/adds','BinarsController@store');
+	route::get('/user','UsersController@index');
 
-route::get('/partner','PartnersController@index');
-route::get('/partner/add','PartnersController@create');
-route::post('/partners/add','PartnersController@store');
+	route::get('/webinar','BinarsController@index');
+	route::get('/webinar/add','BinarsController@create');
+	route::post('/webinar/adds','BinarsController@store');
 
-route::get('/news','NewsController@index');
-route::get('/news/add','NewsController@create');
-route::post('/new/add','NewsController@store');
-route::get('/news/{news}/detail','NewsController@show');
+	route::get('/partner','PartnersController@index');
+	route::get('/partner/add','PartnersController@create');
+	route::post('/partners/add','PartnersController@store');
 
-route::get('/analyst','AnalysisController@index');
-route::get('/analyst/add','AnalysisController@create');
-route::post('/analyst/adds','AnalysisController@store');
-route::get('/analyst/{analysis}/detail','AnalysisController@show');
+	route::get('/news','NewsController@index');
+	route::get('/news/add','NewsController@create');
+	route::post('/new/add','NewsController@store');
+	route::get('/news/{news}/detail','NewsController@show');
+	route::get('/news/{news}/edit','NewsController@edit');
+	route::get('/news/{news}/delete','NewsController@destroy');
+	route::post('/news/{id}/update','NewsController@update');
 
-route::get('/logout','AuthController@logout');
+	route::get('/analyst','AnalysisController@index');
+	route::get('/analyst/add','AnalysisController@create');
+	route::post('/analyst/adds','AnalysisController@store');
+	route::get('/analyst/{analysis}/detail','AnalysisController@show');
+	route::get('/analyst/{analysis}/edit','AnalysisController@edit');
+	route::post('/analyst/{id}/update','AnalysisController@update');
+	route::get('/analyst/{analysis}/delete','AnalysisController@drop');
+
+	route::get('/logout','AuthController@logout');
+});
 
 
 

@@ -50,7 +50,7 @@
     <div class="card-body">
       <br>
       <br>
-      <img width="1450px" src="{{asset('assets/img/moto.png')}}">
+      <img width="1400px" src="{{asset('assets/img/moto.png')}}">
       <br>
       <br>
     </div>

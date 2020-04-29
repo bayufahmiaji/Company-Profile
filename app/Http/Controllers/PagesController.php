@@ -26,7 +26,7 @@ class PagesController extends Controller
     }
 
     public function berita(){
-        $news = News::all();
+        $news = News::orderBy('id','desc')->get();
         return view('company.costumer.berita',compact('news'));
     }
      public function berita2(News $news){
@@ -43,7 +43,7 @@ class PagesController extends Controller
     }
 
     public function analisa(){
-        $analyst = Analysis::all();
+        $analyst = Analysis::orderBy('id','desc')->get();
         return view('company.costumer.analisa',compact('analyst'));
     }
     public function analisa2(Analysis $analysis){

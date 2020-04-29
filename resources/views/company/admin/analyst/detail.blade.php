@@ -34,8 +34,10 @@ Analisis Victory
 			</div>
 			<br>  
 			<p><a href="#" class="btn btn-dark">Diposkan pada {{$analysis->created_at}}</a> </p>  
-		</div>  
-		<p style="text-align:justify;">{{$analysis->description}}</p>  
+		</div> 
+		<div>
+		<p style="text-align:justify;"><?=substr($analysis->description,0);?></p>  
+		</div> 
 		<div style="clear:both;"></div>  
 		</div>  
 
